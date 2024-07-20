@@ -4,16 +4,21 @@ body {
 
 
 .my-col {
-    border: 2px solid #57cc99;
+    border: 2px solid #2667ff;
 }
 
 
  .sidebar {
-     background-color: #57cc99;
+     background-color: #3b28cc;
      height: 100vh;
      padding: 15px;
  }
 
+.list-group-item {
+   background-color: #87bfff; 
+   color: white;
+   cursor: pointer;
+}
 
  .btn-new-message {
     width: 100%;
@@ -23,7 +28,7 @@ body {
 
  
  .my-dim {
-    border: 2px solid darkorange;
+    border: 2px solid #2667ff;
  }
 
  .search-bar {
@@ -33,3 +38,96 @@ body {
  .spacing {
     gap: 5px;
  }
+
+
+ .more-item {
+   border: none;
+
+ }
+
+ .more-item-button {
+   background-color: #87bfff;
+   font-size: medium;
+   padding-top: 1px;
+   padding-bottom: 1px;;
+   color: black;
+
+ }
+
+ .accordion-body{
+   background-color: #87bfff;
+   padding-left: 0%;
+ }
+
+
+
+ .icon {
+   margin-right: 6px;
+ }
+
+
+.mail:hover {
+   background-color: #f5f3f4;
+   cursor: pointer;
+}
+
+.mail {
+   display: flex;
+   align-items: center;
+   padding: 10px;
+}
+
+.checkbox {
+   margin-right: 10px;
+}
+
+.mail-author {
+   font-weight: bold;
+   margin-right: 10px;
+}
+
+
+.mail-msg {
+   flex-grow: 1;
+   margin-right: 10px;
+   color: #666;
+   white-space: no-wrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.mail-date {
+   white-space: no-wrap;
+   color: #999;
+}
+
+
+
+.send-mail {
+   padding: 0;
+   
+}
+
+.send-mail-title{
+   background-color: #87bfff;
+      /* Change this to your desired color */
+      color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      font-size: medium;
+      
+}
+
+.send-mail-title p {
+   margin: 0;
+   font-weight: 400;
+}
+
+.send-mail-email{
+   padding-left: 10px;
+   margin-top: 15px;
+   cursor: pointer;
+}
+
+
