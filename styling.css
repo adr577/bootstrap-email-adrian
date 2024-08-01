@@ -1,38 +1,64 @@
+* {
+   box-sizing: border-box;
+   max-width: 100%;
+   
+}
+
 body {
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    height: 100vh;
+    margin: 0;
 }
-
-
-.my-col {
-    border: 2px solid #2667ff;
-}
-
 
  .sidebar {
-     background-color: #3b28cc;
+     background-color: #03045e;
      height: 100vh;
      padding: 15px;
  }
 
+ .navbar {
+   
+
+ }
+
 .list-group-item {
-   background-color: #87bfff; 
+   background-color: #03045e; 
    color: white;
    cursor: pointer;
+   transition-duration: 200ms;
 }
+
+.list-group-item:hover {
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   opacity: 0.9;
+   background-color: rgba(219, 219, 219, 0.1);
+   transform: scale(1);
+
+}
+
 
  .btn-new-message {
     width: 100%;
+    height: auto;
     padding: 10px;
     border-radius: 15px;
+    background-color: #0096c7;
+    color: #f8f9fa;
+    font-size: 1em;
+    transition-duration: 200ms;
+
+ }
+
+ .btn-new-message:hover {
+   color: #f8f9fa;
+   opacity: 0.8;
  }
 
  
- .my-dim {
-    border: 2px solid #2667ff;
- }
-
  .search-bar {
-    width: 200px;
+    width: 25rem;
+    background-color: #f2f2f2;
  }
 
  .spacing {
@@ -41,40 +67,75 @@ body {
 
 
  .more-item {
-   border: none;
-
+   color: black;
+    text-align: left;
+    background-color: #87bfff;
+   border: #87bfff;
+   
  }
 
  .more-item-button {
-   background-color: #87bfff;
-   font-size: medium;
-   padding-top: 1px;
-   padding-bottom: 1px;;
-   color: black;
+   background-color: #03045e;
+   color: white;
+   padding-top: 10px;
+   padding-bottom: 10px;
+
 
  }
 
+
+.small-text {
+   font-size: 0.4em;
+}
+
+ .progress {
+   margin-top: auto;
+ }
+
  .accordion-body{
-   background-color: #87bfff;
    padding-left: 0%;
  }
 
 
 
  .icon {
-   margin-right: 6px;
+   margin-right: 0.375rem;
+   cursor: pointer;
+   height: 1rem;
+   width: 1rem;
  }
 
+ .inbox {
+   margin: 0;
+   padding: 0;
+ }
 
 .mail:hover {
-   background-color: #f5f3f4;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
    cursor: pointer;
+   background-color: white;
+}
+
+.my-border {
+   border: 2px solid black;
+   border-radius: 10px;
 }
 
 .mail {
    display: flex;
    align-items: center;
-   padding: 10px;
+   justify-content: center;
+   padding: 0.7rem;
+   max-width: 100%;
+}
+
+.mail-inbox-item {
+      color: black;
+      cursor: pointer;
+      border-bottom: 2px solid rgba(131, 129, 129, 0.1);
+      overflow: hidden;
+   
+      inset: 0;
 }
 
 .checkbox {
@@ -82,40 +143,50 @@ body {
 }
 
 .mail-author {
-   font-weight: bold;
+   font-weight: 700;
    margin-right: 10px;
+   color: #1c1c1d;
+   font-size: 0.9rem;
 }
 
 
 .mail-msg {
    flex-grow: 1;
    margin-right: 10px;
-   color: #666;
+   color: #343a40;
    white-space: no-wrap;
    overflow: hidden;
-   text-overflow: ellipsis;
+   font-size: 0.9em;
 }
 
 .mail-date {
    white-space: no-wrap;
-   color: #999;
+   color: #343a40;
+   font-size: 0.9rem;
+   z-index: 1;
 }
-
-
 
 .send-mail {
    padding: 0;
-   
+   background-color: #f9f9f9;
+   margin: 0;
+   height: auto;
+}
+
+.submit-container {
+   max-width: 100%;
+
 }
 
 .send-mail-title{
-   background-color: #87bfff;
+   background-color: #03045e;
       /* Change this to your desired color */
       color: white;
       padding-top: 10px;
       padding-bottom: 10px;
-      padding-left: 10px;
+      padding-left: 0.7rem;
       font-size: medium;
+      
       
 }
 
@@ -126,8 +197,19 @@ body {
 
 .send-mail-email{
    padding-left: 10px;
-   margin-top: 15px;
+   margin-top: 1rem;
    cursor: pointer;
 }
 
+.folder {
+   background-color: #03045e;
+   color: white;
+}
 
+.my-col {
+   border: 2px solid salmon;
+}
+
+.my-bg {
+   background-color: #03045e;
+}

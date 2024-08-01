@@ -10,6 +10,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="styling.css">  
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,219 +19,263 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-
 </head>
 
 <body>
 
-
-
-
-
     <div class="container-fluid">
+
         <div class="row">
-        <!-- This is the side nav col -->
-            <nav class="col-md-3 d-none d-md-block sidebar">
+        <!-- This is the side nav col  for mobile-->
+
+            <nav class="navbar navbar-expand-md navbar-light bg-light d-md-none">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand fs-5 fw-bold" href="#">Mordecai and Rigby Mail</a>
+            </nav>
+            
+            <!-- Offcanvas sidebar for mobile -->
+            <div class="offcanvas offcanvas-start my-bg text-light" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body ">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-sm btn-primary position-relative w-100 mb-2" style="background: transparent; color: #2667ff;">
+                                A
+                                <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                                    <span class="visually-hidden">New alerts</span>
+                                </span>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-sm btn-new-message font-weight-light">New Message</button>
+                        </li>
+                        
+                        
+
+                    </ul>
+                </div>
+            </div>
+            <!-- Side bar menu for desktop and tablet screens -->
+            <nav class="col-lg-3 col-md-3 d-none d-md-block sidebar shadow-lg">
 
              <div class="header mb-3 mt-1">
                 <div class="d-flex align-items-center">
-                    <img src="#" class="logo mr-2">
-                    <h5 class="m-0">Protein Mail</h5>
+                    <img src="./logo/crown.png" class="logo mr-2">
+                    <h5 class="m-0 overflow-hidden" style="color: #f8f9fa;">Mordecai and Rigby Mail</h5>
                 </div>
              </div>
              <div class="d-grip gap-2">
-                <button class="btn btn-primary btn-sm btn-new-message">New Message</button>
-            </div>
-            <ul class="list-group mt-4 text-star ">
-                <li class="list-group-item active ">
-                    <img class="icon" src="images/inbox.svg">
+                <button class="btn btn-sm btn-new-message font-weight-light">New Message</button>
+             </div>
+            <ul class="list-group mt-4 text-star">
+                <li class="list-group-item active" style="background-color: rgba(255, 255, 255, 0.1); box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; border: none">
+                    <span class="icon"><i class="bi bi-inbox-fill"></i></span>
                     <span>Inbox
-                            <span class="badge text-bg-primary rounded-pill">3</span>
-
+                            <span class="badge text-bg-primary rounded-pill ml-1" style="background-color: #0096c7;">13</span>
                     </span>
                     
                 </li>
 
-
                 <li class="list-group-item">
-                    <img class="icon" src="images/drafts.svg">
+                    <span class="icon"><i class="bi bi-file-earmark-text"></i></span>
                     <span>Drafts</span>
                 </li>
 
-
                 <li class="list-group-item">
-                    <img class="icon" src="images/send.svg">
+                    <span class="icon"><i class="bi bi-send"></i></span>
                     <span>Sent</span>
                 </li>
 
-
                 <li class="list-group-item">
-                    <img class="icon" src="images/star.svg">
+                    <span class="icon"><i class="bi bi-star"></i></span>
                     <span>Starred</span>
-                </li>
-
-
-                <li class="list-group-item">
-                    <div class="accordion " id="accordionExample">
-                        <div class="accordion-item more-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button more-item-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne">
-                                    <img src="images/chevron-bar-expand.png" class="icon">
-                                    <span style="color:white;">More</span>
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <p>
-                                        <img class="icon" src="images/send.svg">
-                                        <span>Archive</span>
-                                    </p>
-                                    <p>
-                                        <img class="icon" src="images/spam.svg">
-                                        <span>Spam</span>
-                                    </p>
-                                    <p>
-                                        <img class="icon" src="images/trash.svg">
-                                        <span>Trash</span>
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </li>
-                
+                </li>          
             </ul>
-
-            
-                <div class="progress mt-3" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0"
-                    aria-valuemax="100">
-                    <div class="progress-bar w-75"></div>
+            <!-- More accordion which includes archive, spam, and trash -->
+            <div class="accordion" id="moreAccordion">
+                <div class="accordion-item" style="border: none;">
+                    <h2 class="accordion-header" id="headingMore">
+                        <button class="accordion-button collapsed more-item-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMore" 
+                        aria-expanded="false" aria-controls="collapseMore">
+                        <span class="icon"><i class="bi bi-arrow-right-circle-fill"></i></span>
+                        More</button>
+                    </h2>
+                    <div id="collapseMore" class="accordion-collapse collapse" aria-labelledby="headingMore" data-bs-parent="#moreAccordion">
+                        <div class="accordion-body folder">
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="bi bi-fire icon"></i>Spam</li>
+                                <li class="list-group-item"><i class="bi bi-archive-fill icon"></i>Archive</li>
+                                <li class="list-group-item"><i class="bi bi-trash-fill icon"></i>Trash</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <p>392.74 MB / 500.00 MB</p>
+            </div>
+                <!-- Progress bar on side bar -->
+                <div class="progress progress-bar-container bg-secondary mt-3" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div class="progress-bar w-25 bg-light"></div>
+                </div>
+                <p class="text-light fs-6 fw-lighter small-text">125.74 MB / 500.00 MB</p>
             </nav>
 
-            <!-- This is the inbox col -->
-            <main class="col-md-6 my-col">
+            <!-- Navbar with search, upgrade btn and profile and settings -->
+            <main class=" col-lg-6 col-md-6 col-sm-12 inbox">
 
-
-                <nav class="navbar navbar-expand-md my-dim d-flex justify-content-between">
-                    <input type="text" class="form-control search-bar" placeholder="Search messages">
-                    <div class="d-flex align-items-center spacing">
-                       <button class="btn btn-outline-primary btn-sm">Upgrade</button>
-                        <img src="images/gear.svg" alt="settings icon">
-                        <button class="btn btn-outline-primary btn-sm">A</button>
+                <nav class="navbar navbar-expand-md my-bottom-border d-flex justify-content-between align-items-sm-center m-auto shadow-sm">
+                    <input type="text" class="form-control search-bar border-0" placeholder="Search messages">
+                    <div class="d-md-flex align-items-center gap-2 d-none">
+                       <button class="btn btn-outline-primary btn-sm ml-1 text-nowrap"><i class="bi bi-gem mr-1"></i>Upgrade</button>
+                        <span class="d-flex align-items-center bg-light p-1 rounded"><i class="bi bi-gear-wide-connected "></i></span>
+                        <button type="button" class="btn btn-sm btn-primary position-relative" style="background: transparent; color: #2667ff;">
+                            A
+                            <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                                <span class="visually-hidden">New alerts</span>
+                            </span>
+                        </button>
                     </div>
                 </nav>
-
-
-                <div class="mt-3 d-flex align-items-center justify-content-between">
-                    <h5>Inbox</h5>
-                    <p style="color: C4C4C4;">
-                        <img src="images/chevron-left.png">
-                        <span>1/1</span>
-                        <img src="images/chevron-right.png">
-                    </p>
+                <!-- Inbox inner nav and page tabs -->
+                <div class="d-flex align-items-center justify-content-between m-auto p-2 mt-1">
+                    <div class="ml-2"><h5 class="text-dark">Inbox</h5></div>
+                    <!-- <span class="ml-2 d-flex align-items-center jusify-content-center pt-0"><i class="bi bi-three-dots"></i></span> -->
+                    <div class="ml-auto mr-2">
+                        <i class="bi bi-chevron-left icon"></i>
+                        <span class="text-dark mr-1">1/2</span>
+                        <i class="bi bi-chevron-right icon"></i>
+                    </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item mail">
+                <!-- INBOX ITEMS -->
+                <ul class="list-group list-group-flush  my-border border-light">
+                    <li class="mail-inbox-item mail" style="border-bottom: 2px solid rgba(131, 129, 129, 0.1);">
                         <input type="checkbox" class="checkbox">
-                        <img src="images/gear.svg" alt="starred" class="icon">
-                        <span class="mail-author">Twitter</span>
-                        <span class="mail-msg">Donald Trump's life continues as bullet grazes</span>
-                        <span class="mail-date">Jul 13</span>
+                        <span class="icon d-flex align-items-center"><i class="bi bi-star"></i></span>
+                        <span class="mail-author text-nowrap">Vault-Tec</span>
+                        <span class="mail-msg text-nowrap text-truncate">Bringing you the thrill of a lifetime, or at least the excitement of figuring out what’s in that mysterious
+                        box</span>
+                        <span class="mail-date text-nowrap">Aug 1</span>
                     </li>
-                    <li class="list-group-item mail">
+                    <li class="mail-inbox-item mail list-group-item active bg-light text-dark border-0"
+                        style="border-bottom: 2px solid rgba(131, 129, 129, 0.1);">
                         <input type="checkbox" class="checkbox">
-                        <img src="images/gear.svg" alt="starred" class="icon">
-                        <span class="mail-author">Twitter</span>
-                        <span class="mail-msg">Donald Trump's life continues as bullet grazes</span>
-                        <span class="mail-date">Jul 13</span>
+                        <span class="icon d-flex align-items-center"><i class="bi bi-star"></i></span>
+                        <span class="mail-author text-nowrap">Playboi Carti</span>
+                        <span class="mail-msg text-nowrap d-inline text-truncate">WaKe Up!!** It's the fiRst of tHe mONth**&</span>
+                        <span class="mail-date">Aug 1</span>
                     </li>
-                    <li class="list-group-item mail" >
+                    <li class="mail-inbox-item mail" style="border-bottom: 2px solid rgba(131, 129, 129, 0.1);">
                         <input type="checkbox" class="checkbox">
-                        <img src="images/gear.svg" alt="starred" class="icon">
-                        <span class="mail-author">Twitter</span>
-                        <span class="mail-msg">Donald Trump's life continues as bullet grazes</span>
-                        <span class="mail-date">Jul 13</span>
+                        <span class="icon d-flex align-items-center"><i class="bi bi-star"></i></span>
+                        <span class="mail-author text-nowrap">Preston G.</span>
+                        <span class="mail-msg text-nowrap text-truncate">After you finish dropping a nuke on the institute, another settlement needs your help.</span>
+                        <span class="mail-date text-nowrap">Jul 31</span>
                     </li>
-                    <li class="list-group-item mail">
+                    <li class="mail-inbox-item mail ">
                         <input type="checkbox" class="checkbox">
-                        <img src="images/gear.svg" alt="starred" class="icon">
-                        <span class="mail-author">Twitter</span>
-                        <span class="mail-msg">Donald Trump's life continues as bullet grazes</span>
-                        <span class="mail-date">Jul 13</span>
+                        <span class="icon d-flex align-items-center"><i class="bi bi-star"></i></span>
+                        <span class="mail-author text-nowrap">Diamond City Security</span>
+                        <span class="mail-msg text-nowrap text-truncate">WHO took a dookie in the town center? You will pay for this</span>
+                        <span class="mail-date text-nowrap">Jul 26</span>
                     </li>
-                    <li class="list-group-item mail">
+                    <li class="mail-inbox-item mail">
                         <input type="checkbox" class="checkbox">
-                        <img src="images/gear.svg" alt="starred" class="icon">
-                        <span class="mail-author">Twitter</span>
-                        <span class="mail-msg">Donald Trump's life continues as bullet grazes</span>
-                        <span class="mail-date">Jul 13</span>
+                        <span class="icon d-flex align-items-center"><i class="bi bi-star"></i></span>
+                        <span class="mail-author text-nowrap">Father</span>
+                        <span class="mail-msg text-nowrap text-truncate">Father, I am your father. Wait what? Whatever, just take over my job. </span>
+                        <span class="mail-date text-nowrap">Jul 25</span>
+                    </li>
+                    <li class="mail-inbox-item mail">
+                        <input type="checkbox" class="checkbox">
+                        <span class="icon d-flex align-items-center"><i class="bi bi-star"></i></span>
+                        <span class="mail-author text-nowrap">BoS</span>
+                        <span class="mail-msg text-nowrap text-truncate">Who needs diplomacy when you have power armor and big guns?</span>
+                        <span class="mail-date text-nowrap">Jul 21</span>
+                    </li>
+                    <li class="mail-inbox-item mail" >
+                        <input type="checkbox" class="checkbox">
+                        <span class="icon d-flex align-items-center"><i class="bi bi-star"></i></span>
+                        <span class="mail-author text-nowrap">Nuka Cola</span>
+                        <span class="mail-msg text-nowrap text-truncate">Effective against Deathclaws? Not really. But it’s guaranteed to make you feel brave enough to face one.</span>
+                        <span class="mail-date text-nowrap">Jul 17</span>
+                    </li>
+                    <li class="mail-inbox-item mail">
+                        <input type="checkbox" class="checkbox">
+                        <span class="icon d-flex align-items-center"><i class="bi bi-star"></i></span>
+                        <span class="mail-author text-nowrap">Dogmeat</span>
+                        <span class="mail-msg text-nowrap text-truncate">Translation: I found a stick, some ammo, and a suspiciously chewed-up Super Mutant leg. Best day ever!</span>
+                        <span class="mail-date text-nowrap">Jul 16</span>
+                    </li>
+                    <li class="mail-inbox-item mail">
+                        <input type="checkbox" class="checkbox">
+                        <span class="icon d-flex align-items-center"><i class="bi bi-star"></i></span>
+                        <span class="mail-author text-nowrap">Preston G.</span>
+                        <span class="mail-msg text-nowrap text-truncate">Another settlement needs your help! Just kidding. But seriously, can you take a break from saving the Commonwealth</span>
+                        <span class="mail-date text-nowrap">Jul 13</span>
                     </li>
                 </ul>
-                <!-- <div class="mt-3">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action ">Email 1
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action">Email 2</a>
-                        <a href="#" class="list-group-item list-group-item-action">Email 3</a>
-                    </div>
-                </div> -->
             </main>
 
-            <!-- This is the compose mail -->
-            <div class="col-md-3 send-mail">
-               <div class="d-flex justify-content-between send-mail-title">
+            <!-- This is the compose mail field -->
+            <div class="col-lg-3 col-md-3  send-mail shadow overflow-auto ">
+               <div class="d-flex justify-content-between send-mail-title rounded">
                     <p>New Message</p>
-                    <button type="button" class="btn-close" aria-label="Close"></button>
+                    <span class="icon"><i class="bi bi-x-lg"></i></span>
                </div>  
-               <form>
-                   <div class="send-mail-email">
-                        axrhip@Protein
-                        <img src="images/chevron-down.png">
+               <form class="mw-100 h-auto d-flex flex-column jusify-content-center pr-3">
+                   <div class="send-mail-email text-dark">
+                        rigby@Protein
+                        <i class="bi bi-chevron-compact-down"></i>
                     </div>
                    <div class="form-group">
                      <label for="to"></label>
-                     <input type="email" class="form-control ml-2" id="to" placeholder="To">
+                     <input type="email" class="form-control ml-2 border-light shadow-sm" id="to" placeholder="To">
                    </div> 
                     <div class="form-group">
-                        <button type="button" class="btn btn-secondary btn-sm ml-2">CC</button>
-                        <button type="button" class="btn btn-secondary btn-sm ml-2">BCC</button>
+                        <button type="button" class="btn btn-warning btn-sm ml-2 text-dark border-0 shadow-sm">CC</button>
+                        <button type="button" class="btn btn-info btn-sm ml-2 text-white border-0 shadow-sm">BCC</button>
                     </div>
 
                    <div class="form-group">
                         <label for="subject"></label>
-                        <input type="text" class="form-control ml-2" id="subject" placeholder="Subject">
+                        <input type="text" class="form-control ml-2 border-light shadow-sm" id="subject" placeholder="Subject">
                    </div>
-                <div class="toolbar">
-                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-bold"></i></button>
-                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-italic"></i></button>
-                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-underline"></i></button>
-                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-link"></i></button>
-                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-font"></i></button>
-                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-text-height"></i></button>
+                <div class="toolbar ml-2 border rounded shadow-sm">
+                    <button type="button" class="btn btn-light btn-sm"><i class="bi bi-fonts"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="bi bi-type-italic"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="bi bi-type-underline"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="bi bi-link-45deg"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="bi bi-type-bold"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="bi bi-eraser"></i></button>
                 </div>
                    <div class="form-group">
                         <label for="message"></label>
-                        <textarea class="form-control ml-2" id="message" rows="5"></textarea>
+                        <textarea class="form-control ml-2 border-light shadow-sm" id="message" rows="5"></textarea>
                    </div>
+                <div class="d-flex justify-content-between align-items-center">
 
-                <button type="submit" class="btn btn-primary ml-2">Send</button>
+                    <div class="d-flex jusify-content-start align-items-center submit-container"><button type="submit"
+                            class="btn  ml-2 btn-new-message px-4 py-2 border-0">Send</button></div>
+                    <div class="ml-auto text-nowrap">
+                        <button type="button" class="btn btn-light btn-sm"><i class="bi bi-trash-fill"></i></button>
+                        <button type="button" class="btn btn-light btn-sm"><i class="bi bi-file-lock "></i></button>
+                        <button type="button" class="btn btn-light btn-sm"><i class="bi bi-paperclip "></i></button>
+                    </div>
+
+                </div>
+                
                </form>
-
-
+               
             </div> 
             
         </div>
-
-
     
     </div>
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
