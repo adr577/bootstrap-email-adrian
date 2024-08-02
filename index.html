@@ -31,30 +31,106 @@
             <nav class="navbar navbar-expand-md navbar-light bg-light d-md-none">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                     aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon bg-light rounded p-3"></span>
                 </button>
-                <a class="navbar-brand fs-5 fw-bold" href="#">Mordecai and Rigby Mail</a>
+                <a class="navbar-brand fs-5 fw-bold" href="#">Sanctuary Hills Mail</a>
             </nav>
             
             <!-- Offcanvas sidebar for mobile -->
-            <div class="offcanvas offcanvas-start my-bg text-light" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-start my-bg text-light w-50" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
+                    <span><img src="./logo/crown.png" class="logo"></span>
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body ">
-                    <ul class="navbar-nav">
+                <div class="offcanvas-body p-0 ">
+                    <ul class="navbar-nav   jusify-content-start flex-grow-1">
                         <li class="nav-item">
-                            <button type="button" class="btn btn-sm btn-primary position-relative w-100 mb-2" style="background: transparent; color: #2667ff;">
-                                A
-                                <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-                                    <span class="visually-hidden">New alerts</span>
-                                </span>
-                            </button>
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-sm  btn-profile  btn-secondary dropdown-toggle position-relative w-100 mb-2" style="background: transparent;" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="text-light">rigby@protein.com</span>   
+                                </button>
+                                <!-- Dropdown menu for profile btn mobile -->
+                                <ul class="dropdown-menu "> 
+                                    <li><a class="dropdown-item  border rounded overflow-hidden  my-col mb-1 text-center" href="#">Switch Account</a></li>
+                                    <li><a class="dropdown-item  border rounded overflow-hidden  my-col mb-1 text-center" href="#">Settings</a></li>
+                                    <li><a class="dropdown-item  border rounded overflow-hidden  my-col text-light bg-info text-center" href="#">Sign out</a></li>
+                                </ul>
+                            </div>
+                            <!-- side bar menu items for nav -->
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-sm btn-new-message font-weight-light">New Message</button>
+                            <button class="btn btn-sm btn-new-message font-weight-light my-2" id="newMessageButton">New Message</button>
                         </li>
+                        <ul class="list-group">
+                            <li class="list-group-item border-0"><i class="bi bi-inbox-fill icon"></i>Inbox</li>
+
+                            <li class="list-group-item border-0">
+                                <span class="icon"><i class="bi bi-file-earmark-text"></i></span>
+                                <span>Drafts</span>
+                            </li>
+
+                            <li class="list-group-item border-0">
+                                <span class="icon"><i class="bi bi-send"></i></span>
+                                <span>Sent</span>
+                            </li>
+
+                            <li class="list-group-item border-0">
+                                <span class="icon"><i class="bi bi-star"></i></span>
+                                <span>Starred</span>
+                            </li>
+
+                            <!-- Mobile accordion "more"-->
+
+                            <div class="accordion" id="moreAccordion">
+                                <div class="accordion-item" style="border: none;">
+                                    <h2 class="accordion-header" id="headingMore">
+                                        <button class="accordion-button collapsed more-item-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseMore" aria-expanded="false" aria-controls="collapseMore">
+                                            <span class="icon"><i class="bi bi-arrow-right-circle-fill"></i></span>
+                                            More</button>
+                                    </h2>
+                                    <div id="collapseMore" class="accordion-collapse collapse" aria-labelledby="headingMore"
+                                        data-bs-parent="#moreAccordion">
+                                        <div class="accordion-body folder">
+                                            <ul class="list-group">
+                                                <li class="list-group-item"><i class="bi bi-fire icon"></i>Spam</li>
+                                                <li class="list-group-item"><i class="bi bi-archive-fill icon"></i>Archive</li>
+                                                <li class="list-group-item"><i class="bi bi-trash-fill icon"></i>Trash</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Folder accordion for mobile -->
+                            <div class="accordion" id="folderAccordion">
+                                <div class="accordion-item" style="border: none;">
+                                    <h2 class="accordion-header" id="headingFolder">
+                                        <button class="accordion-button collapsed more-item-button " type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseFolder" aria-expanded="false" aria-controls="collapseFolder">
+                                            <span class="icon"><i class="bi bi-folder2"></i></span>
+                                            Folders</button>
+                                    </h2>
+                                    <div id="collapseFolder" class="accordion-collapse collapse" aria-labelledby="headingFolder"
+                                        data-bs-parent="#folderAccordion">
+                                        <div class="accordion-body folder">
+                                            <ul class="list-group ">
+                                                    <span class="d-flex flex-grow-1 align-items-center justify-content-between">
+                                                        <li class="list-group-item border-0 text-light">No Folders</li>
+                                                        <span style="cursor:pointer;"><i class="bi bi-plus-lg"></i></span>
+                                                    </span>
+                                               
+                                                
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </ul>
                         
                         
 
@@ -67,7 +143,7 @@
              <div class="header mb-3 mt-1">
                 <div class="d-flex align-items-center">
                     <img src="./logo/crown.png" class="logo mr-2">
-                    <h5 class="m-0 overflow-hidden" style="color: #f8f9fa;">Mordecai and Rigby Mail</h5>
+                    <h5 class="m-0 overflow-hidden" style="color: #f8f9fa;">Sanctuary Hills Mail</h5>
                 </div>
              </div>
              <div class="d-grip gap-2">
@@ -125,16 +201,16 @@
                 <p class="text-light fs-6 fw-lighter small-text">125.74 MB / 500.00 MB</p>
             </nav>
 
-            <!-- Navbar with search, upgrade btn and profile and settings -->
-            <main class=" col-lg-6 col-md-6 col-sm-12 inbox">
+            <!-- Section with navbar search, title, and inbox -->
+            <main class=" col-lg-6 col-md-6 col-12 inbox">
 
                 <nav class="navbar navbar-expand-md my-bottom-border d-flex justify-content-between align-items-sm-center m-auto shadow-sm">
                     <input type="text" class="form-control search-bar border-0" placeholder="Search messages">
                     <div class="d-md-flex align-items-center gap-2 d-none">
                        <button class="btn btn-outline-primary btn-sm ml-1 text-nowrap"><i class="bi bi-gem mr-1"></i>Upgrade</button>
-                        <span class="d-flex align-items-center bg-light p-1 rounded"><i class="bi bi-gear-wide-connected "></i></span>
-                        <button type="button" class="btn btn-sm btn-primary position-relative" style="background: transparent; color: #2667ff;">
-                            A
+                        <span style="cursor: pointer;" class="d-flex align-items-center bg-light p-1 rounded"><i class="bi bi-gear-wide-connected "></i></span>
+                        <button type="button" class="btn btn-sm btn-primary position-relative custom-mobile-style" style="background: transparent; color: #2667ff;">
+                            R
                             <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
                                 <span class="visually-hidden">New alerts</span>
                             </span>
@@ -167,7 +243,7 @@
                         <span class="icon d-flex align-items-center"><i class="bi bi-star"></i></span>
                         <span class="mail-author text-nowrap">Playboi Carti</span>
                         <span class="mail-msg text-nowrap d-inline text-truncate">WaKe Up!!** It's the fiRst of tHe mONth**&</span>
-                        <span class="mail-date">Aug 1</span>
+                        <span class="mail-date text-nowrap">Aug 1</span>
                     </li>
                     <li class="mail-inbox-item mail" style="border-bottom: 2px solid rgba(131, 129, 129, 0.1);">
                         <input type="checkbox" class="checkbox">
@@ -222,11 +298,12 @@
             </main>
 
             <!-- This is the compose mail field -->
-            <div class="col-lg-3 col-md-3  send-mail shadow overflow-auto ">
+            <div class="col-lg-3 col-md-3 d-md-block d-lg-block d-none send-mail shadow overflow-auto " id="composeSection">
                <div class="d-flex justify-content-between send-mail-title rounded">
                     <p>New Message</p>
                     <span class="icon"><i class="bi bi-x-lg"></i></span>
                </div>  
+               <!-- form field on right side -->
                <form class="mw-100 h-auto d-flex flex-column jusify-content-center pr-3">
                    <div class="send-mail-email text-dark">
                         rigby@Protein
@@ -237,14 +314,15 @@
                      <input type="email" class="form-control ml-2 border-light shadow-sm" id="to" placeholder="To">
                    </div> 
                     <div class="form-group">
-                        <button type="button" class="btn btn-warning btn-sm ml-2 text-dark border-0 shadow-sm">CC</button>
-                        <button type="button" class="btn btn-info btn-sm ml-2 text-white border-0 shadow-sm">BCC</button>
+                        <button type="button" class="btn btn-outline-warning  btn-sm ml-2 text-dark  shadow-lg">CC</button>
+                        <button type="button" class="btn btn btn-outline-info  btn-sm ml-2 text-dark  shadow-lg">BCC</button>
                     </div>
 
                    <div class="form-group">
                         <label for="subject"></label>
                         <input type="text" class="form-control ml-2 border-light shadow-sm" id="subject" placeholder="Subject">
                    </div>
+                   <!-- tool bar with fonts bold, italic ,etc -->
                 <div class="toolbar ml-2 border rounded shadow-sm">
                     <button type="button" class="btn btn-light btn-sm"><i class="bi bi-fonts"></i></button>
                     <button type="button" class="btn btn-light btn-sm"><i class="bi bi-type-italic"></i></button>
@@ -258,7 +336,7 @@
                         <textarea class="form-control ml-2 border-light shadow-sm" id="message" rows="5"></textarea>
                    </div>
                 <div class="d-flex justify-content-between align-items-center">
-
+                    <!-- bottom of the compose mail with send btn and other icons -->
                     <div class="d-flex jusify-content-start align-items-center submit-container"><button type="submit"
                             class="btn  ml-2 btn-new-message px-4 py-2 border-0">Send</button></div>
                     <div class="ml-auto text-nowrap">
@@ -279,6 +357,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var newMessageButton = document.getElementById('newMessageButton');
+            var composeSection = document.getElementById('composeSection');
+
+            newMessageButton.addEventListener('click', function () {
+                if (window.innerWidth <= 768) { // mobile
+                    composeSection.classList.toggle('d-none');
+                    composeSection.classList.toggle('d-block');
+                }
+            });
+        });
+    </script>
 
 </body>
 

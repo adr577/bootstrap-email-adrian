@@ -17,16 +17,13 @@ body {
      padding: 15px;
  }
 
- .navbar {
-   
-
- }
 
 .list-group-item {
    background-color: #03045e; 
    color: white;
    cursor: pointer;
    transition-duration: 200ms;
+   border: none;
 }
 
 .list-group-item:hover {
@@ -65,22 +62,11 @@ body {
     gap: 5px;
  }
 
-
- .more-item {
-   color: black;
-    text-align: left;
-    background-color: #87bfff;
-   border: #87bfff;
-   
- }
-
  .more-item-button {
    background-color: #03045e;
    color: white;
    padding-top: 10px;
    padding-bottom: 10px;
-
-
  }
 
 
@@ -95,7 +81,6 @@ body {
  .accordion-body{
    padding-left: 0%;
  }
-
 
 
  .icon {
@@ -207,9 +192,24 @@ body {
 }
 
 .my-col {
-   border: 2px solid salmon;
+   border: 1px solid rgba(216, 216, 216, 0.1);
 }
 
 .my-bg {
    background-color: #03045e;
 }
+
+
+
+
+.btn-profile {
+
+   border: 2px solid rgba(213, 213, 213, 0.1);
+   
+}
+
+
+.btn-profile:hover {
+   border: 2px solid rgba(251, 251, 251, 0.1);
+}
+
